@@ -3,15 +3,15 @@
         <thead>
             <tr>
                 <th>Title</th>
-        <th>Status</th>
+                <th>Status</th>
                 <th colspan="3">Action</th>
             </tr>
         </thead>
         <tbody>
-        @foreach($todos as $todo)
+            @foreach($todos as $todo)
             <tr>
                 <td>{{ $todo->title }}</td>
-            <td>{{ $todo->status }}</td>
+                <td>{{ $todo->status_name }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['todos.destroy', $todo->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
@@ -26,7 +26,7 @@
                     {!! Form::close() !!}
                 </td>
             </tr>
-        @endforeach
+            @endforeach
         </tbody>
     </table>
 </div>
